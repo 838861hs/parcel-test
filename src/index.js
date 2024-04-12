@@ -1,6 +1,8 @@
 import React from 'react';
+import ReactDOM from 'react-dom/client'; 
 import { createRoot } from 'react-dom/client';
 import { Button } from '@mui/material';
+import PasswordInput from './components/password';
 import "./scss/index.scss";
 
 const App = () => (
@@ -14,3 +16,13 @@ const AppEml = document.getElementById('app');
 const AppRoot = createRoot(AppEml);
 AppRoot.render(<App />);
 console.log('test')
+
+
+//パスワード
+const paswordElm = document.getElementById('password');
+const passwordRoot = ReactDOM.createRoot(paswordElm);
+passwordRoot.render(
+    <>
+    <PasswordInput />
+    </>
+)
