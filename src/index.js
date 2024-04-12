@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Button } from '@mui/material';
+import "./scss/index.scss";
 
 const App = () => (
     <div>
