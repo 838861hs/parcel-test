@@ -6,10 +6,10 @@ import PasswordInput from './components/password';
 import "./scss/index.scss";
 
 const App = () => (
-    <div>
+    <React.Fragment>
         <h1>Hello, React with MUI!</h1>
         <Button variant="contained">Hello World</Button>
-    </div>
+    </React.Fragment>
 );
 
 const AppEml = document.getElementById('app');
