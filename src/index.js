@@ -1,5 +1,5 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { createRoot } from 'react-dom/client';
 import { Button } from '@mui/material';
 import "./scss/index.scss";
 
@@ -10,4 +10,7 @@ const App = () => (
     </div>
 );
 
-ReactDOM.render(<App />, document.getElementById('app'));
+const AppEml = document.getElementById('app');
+const AppRoot = createRoot(AppEml);
+AppRoot.render(<App />);
+console.log('test')
