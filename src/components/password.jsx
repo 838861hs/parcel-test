@@ -5,7 +5,7 @@ import InputAdornment from '@mui/material/InputAdornment';
 import Visibility from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
 
-function PasswordInput() {
+function PasswordInput({ className }) {
     const [values, setValues] = useState({
         password: '',
         showPassword: false
@@ -28,6 +28,7 @@ function PasswordInput() {
 
     return (
         <TextField
+            className={className}
             variant="outlined"
             type={values.showPassword ? 'text' : 'password'}
             label="Password"

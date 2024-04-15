@@ -23,6 +23,6 @@ const paswordElm = document.getElementById('password');
 const passwordRoot = ReactDOM.createRoot(paswordElm);
 passwordRoot.render(
     <>
-    <PasswordInput />
+    <PasswordInput  className="test_class"/>
     </>
 )
