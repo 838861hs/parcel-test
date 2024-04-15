@@ -34,6 +34,7 @@ function PasswordInput({ className }) {
             label="Password"
             value={values.password}
             onChange={handleChange('password')}
+            fullWidth
             InputProps={{
                 endAdornment: (
                     <InputAdornment position="end">
