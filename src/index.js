@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client'; 
 import { createRoot } from 'react-dom/client';
-import { Button,TextField } from '@mui/material';
+import { Button,TextField,Checkbox } from '@mui/material';
 import PasswordInput from './components/password';
 import "./scss/index.scss";
 
@@ -24,6 +24,7 @@ const App = () => (
         <Button variant="contained">Hello World</Button>
         </div>
         </div>
+        <Checkbox/>
     </React.Fragment>
 );
 
