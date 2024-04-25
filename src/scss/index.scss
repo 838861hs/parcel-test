@@ -1,7 +1,78 @@
-body{
-  background-color: #999;
-  .container {
-    width: 300px;
-    margin: auto;
+/* スタイルシート */
+.toggle-switch {
+  position: relative;
+  display: inline-block;
+  width: 70px; /* トラックの幅を拡大 */
+  height: 34px; /* トラックの高さを拡大 */
+}
+
+.toggle-switch-checkbox {
+  display: none;
+}
+
+.toggle-switch-label {
+  display: block;
+  overflow: hidden;
+  cursor: pointer;
+  border: 2px solid #ccc;
+  border-radius: 34px; /* ボーダーの半径を高さに合わせて調整 */
+}
+
+.toggle-switch-inner {
+  display: block;
+  width: 200%;
+  margin-left: -100%;
+  transition: margin 0.3s ease-in 0s;
+
+  &:before,
+  &:after {
+    display: block;
+    float: left;
+    width: 50%;
+    height: 30px; /* テキストの高さを拡大 */
+    padding: 0;
+    line-height: 30px; /* テキストの行の高さを調整 */
+    font-size: 16px; /* テキストのフォントサイズを拡大 */
+    color: white;
+    font-family: Trebuchet, Arial, sans-serif;
+    font-weight: bold;
+    box-sizing: border-box;
   }
+
+  &:before {
+    content: "ON";
+    padding-left: 10px;
+    background-color: #34C759;
+    color: #FFFFFF;
+  }
+
+  &:after {
+    content: "OFF";
+    padding-right: 10px;
+    background-color: #bbbbbb;
+    color: #FFFFFF;
+    text-align: right;
+  }
+}
+
+.toggle-switch-switch {
+  display: block;
+  width: 26px; /* ノブのサイズを拡大 */
+  margin: 4px;
+  background: #FFFFFF;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 40px; /* 初期位置を調整 */
+  border: 2px solid #ccc;
+  border-radius: 50%; /* ノブの形を完全な円に */
+  transition: all 0.3s ease-in 0s;
+}
+
+.toggle-switch-checkbox:checked + .toggle-switch-label .toggle-switch-inner {
+  margin-left: 0;
+}
+
+.toggle-switch-checkbox:checked + .toggle-switch-label .toggle-switch-switch {
+  right: 4px; /* 右端に移動するときの位置を調整 */
 }
