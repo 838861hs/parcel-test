@@ -13,8 +13,7 @@ const AppEml = document.getElementById('app');
 const AppRoot = createRoot(AppEml);
 AppRoot.render(
   <>
-  <App />
-  <ToggleSwitch />
+  <PractisComponent />
   </>
 );
 
@@ -29,8 +28,7 @@ function App() {
 
   return (
     <React.Fragment>
-      <PractisComponent />
-      <SimpleTabs tabsData={tabsData} />
+        <PractisComponent />
     </React.Fragment>
   )
 }

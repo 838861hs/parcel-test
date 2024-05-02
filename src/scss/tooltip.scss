@@ -1,0 +1,17 @@
+.tooltips_text{
+  background-color: red;
+  color: #fff;
+  width: 50px;
+  
+  .MuiTooltip-tooltip {
+    background-color: red;
+  }
+}
+
+.MuiTooltip-popper .MuiTooltip-tooltip {
+  margin: 0;
+  text-align: center;
+  padding: 0;
+  width: 100px;
+  border-radius: 0;
+}
