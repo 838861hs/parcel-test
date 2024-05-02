@@ -1,4 +1,4 @@
-
+import '../scss/tab_table.scss'
 
 const NestedTabContent1 = function(){
   return (
