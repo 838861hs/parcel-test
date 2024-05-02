@@ -1,19 +1,28 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client'; 
 import { createRoot } from 'react-dom/client';
-import { Button,TextField,Checkbox } from '@mui/material';
 import React, { useState } from 'react';
-import PasswordInput from './components/password';
 import "../src/scss/index.scss";
 import { Switch, styled } from '@mui/material';
+import { SimpleTabs } from './components/SimpleTabs';
+import { NestedTabs } from './components/NestedTabs';  // ネストされたタブをインポート
+
 
 const AppEml = document.getElementById('app');
 const AppRoot = createRoot(AppEml);
-AppRoot.render(<ToggleSwitch />);
+AppRoot.render(<App />);
 
-import React, { useState } from 'react';
-import { Switch, styled } from '@mui/material';
 
+
+function App() {
+  const tabsData = [
+    { label: 'Tab 1', content: <NestedTabs /> },
+    { label: 'Tab 2', content: 'Content of Tab 2' },
+    { label: 'Tab 3', content: 'Content of Tab 3' }
+  ];
+
+  return <SimpleTabs tabsData={tabsData} />;
+}
 
 
 function ToggleSwitch() {
@@ -24,6 +33,7 @@ function ToggleSwitch() {
   };
 
   return (
+    <>
     <div className="toggle-switch">
       <input
         type="checkbox"
@@ -31,12 +41,14 @@ function ToggleSwitch() {
         className="toggle-switch-checkbox"
         onChange={handleToggle}
         checked={isToggled}
-      />
+        />
       <label className="toggle-switch-label" htmlFor="switch">
         <span className="toggle-switch-inner" />
         <span className="toggle-switch-switch" />
       </label>
     </div>
+    <SimpleTabs />
+    </>
   );
 }
 

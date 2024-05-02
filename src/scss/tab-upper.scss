@@ -1,0 +1,11 @@
+.tab-upper{
+  button{
+    &.Mui-selected{
+      border-bottom: 10px solid red;
+      color: unset;
+    }
+  }
+  .MuiTabs-indicator{
+    display: none;
+  }
+}
