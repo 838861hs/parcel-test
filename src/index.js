@@ -2,15 +2,21 @@ import React from 'react';
 import ReactDOM from 'react-dom/client'; 
 import { createRoot } from 'react-dom/client';
 import React, { useState } from 'react';
-import "../src/scss/index.scss";
 import { Switch, styled } from '@mui/material';
 import { SimpleTabs } from './components/SimpleTabs';
 import { NestedTabs } from './components/NestedTabs';  // ネストされたタブをインポート
+import PractisComponent from './components/test';
+import ToggleSwitch from './components/switch'
 
 
 const AppEml = document.getElementById('app');
 const AppRoot = createRoot(AppEml);
-AppRoot.render(<App />);
+AppRoot.render(
+  <>
+  <App />
+  <ToggleSwitch />
+  </>
+);
 
 
 
@@ -21,38 +27,12 @@ function App() {
     { label: 'Tab 3', content: 'Content of Tab 3' }
   ];
 
-  return <SimpleTabs tabsData={tabsData} />;
-}
-
-
-function ToggleSwitch() {
-  const [isToggled, setIsToggled] = useState(false);
-
-  const handleToggle = () => {
-    setIsToggled(!isToggled);
-  };
-
   return (
-    <>
-    <div className="toggle-switch">
-      <input
-        type="checkbox"
-        id="switch"
-        className="toggle-switch-checkbox"
-        onChange={handleToggle}
-        checked={isToggled}
-        />
-      <label className="toggle-switch-label" htmlFor="switch">
-        <span className="toggle-switch-inner" />
-        <span className="toggle-switch-switch" />
-      </label>
-    </div>
-    <SimpleTabs />
-    </>
-  );
+    <React.Fragment>
+      <PractisComponent />
+      <SimpleTabs tabsData={tabsData} />
+    </React.Fragment>
+  )
 }
 
 
-
-
-export default ToggleSwitch;
