@@ -28,7 +28,7 @@ const practisComponent =() => {
               <p className="age-class">{age}</p>
             </React.Fragment>
             } className="MyComponent" 
-              // open={true} 
+              open={true} 
               arrow>
             <p className="tooltips_text">{name}</p>
           </Tooltip>

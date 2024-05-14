@@ -6,16 +6,33 @@ import { Switch, styled } from '@mui/material';
 import { SimpleTabs } from './components/SimpleTabs';
 import { NestedTabs } from './components/NestedTabs';  // ネストされたタブをインポート
 import PractisComponent from './components/test';
-import ToggleSwitch from './components/switch'
+import ToggleSwitch from './components/switch';
+import DatePicker from './components/DatePicker';
 
-
+ 
+const testval = 0;
+console.log(testval)
 const AppEml = document.getElementById('app');
 const AppRoot = createRoot(AppEml);
-AppRoot.render(
-  <>
-  <PractisComponent />
-  </>
-);
+AppRoot.render(<App />)
+
+
+function InputValue() {
+  const [clickValue, setClickValue] = useState(false);
+
+  const toggleButton = () => {
+    setClickValue(!clickValue)
+  }
+  const buttonClass = clickValue ? 'button-on': 'button-off';
+  return (
+    <>
+      <button className={buttonClass}  onClick={toggleButton}>
+        {clickValue ? 'on': 'off'}
+      </button>
+    </>
+  )
+}
+
 
 
 
@@ -28,7 +45,9 @@ function App() {
 
   return (
     <React.Fragment>
-        <PractisComponent />
+        <SimpleTabs  tabsData ={tabsData} />
+        <ToggleSwitch />
+        <DatePicker />
     </React.Fragment>
   )
 }
