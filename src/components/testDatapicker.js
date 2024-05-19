@@ -1,10 +1,26 @@
 import React, { useState } from 'react';
 import DatePicker, { registerLocale } from 'react-datepicker';
 import { ja } from 'date-fns/locale';
+import { FaCalendarAlt } from 'react-icons/fa';
 import 'react-datepicker/dist/react-datepicker.css';
+import '../scss/index.scss'; // カスタムスタイル用のCSSファイルをインポート
 
 // 日本語ロケールを登録
 registerLocale('ja', ja);
+
+// カスタム入力コンポーネント
+const CustomInput = React.forwardRef(({ value, onClick }, ref) => (
+  <div className="custom-input" onClick={onClick} ref={ref}>
+    <FaCalendarAlt className="calendar-icon" />
+    <input
+      type="text"
+      value={value}
+      readOnly
+      className="date-input"
+      placeholder="日付を選択"
+    />
+  </div>
+));
 
 const SimpleDatePicker = () => {
   const [selectedDate, setSelectedDate] = useState(null);
@@ -47,9 +63,19 @@ const SimpleDatePicker = () => {
         selected={selectedDate}
         onChange={handleDateChange}
         dateFormat="yyyy/MM/dd"
-        placeholderText="日付を選択"
         locale="ja" // 日本語ロケールを設定
         renderCustomHeader={renderCustomHeader} // カスタムヘッダーを使用
+        popperProps={{
+          modifiers: [
+            {
+              name: 'preventOverflow',
+              options: {
+                boundary: 'viewport'
+              },
+            },
+          ],
+        }}
+        customInput={<CustomInput />} // カスタム入力コンポーネントを使用
       />
     </div>
   );
