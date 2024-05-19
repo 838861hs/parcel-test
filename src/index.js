@@ -6,7 +6,7 @@ import { Switch, styled } from '@mui/material';
 import { SimpleTabs } from './components/SimpleTabs';
 import { NestedTabs } from './components/NestedTabs';  // ネストされたタブをインポート
 import PractisComponent from './components/test';
-import ToggleSwitch from './components/switch';
+// import ToggleSwitch from '../components/switch';
 import DatePicker from './components/DatePicker';
 
  
@@ -14,7 +14,7 @@ const testval = 0;
 console.log(testval)
 const AppEml = document.getElementById('app');
 const AppRoot = createRoot(AppEml);
-AppRoot.render(<App />)
+AppRoot.render(<TestDatePicker />)
 
 
 function InputValue() {
@@ -46,10 +46,21 @@ function App() {
   return (
     <React.Fragment>
         <SimpleTabs  tabsData ={tabsData} />
-        <ToggleSwitch />
         <DatePicker />
     </React.Fragment>
   )
 }
 
+import React from 'react';
+import TestDatePicker from './components/testDatapicker';
 
+const TestDatePicker = () => {
+  return (
+    <div>
+      <h1>Date Picker Example</h1>
+      <SimpleDatePicker />
+    </div>
+  );
+};
+
+export default TestDatePicker;

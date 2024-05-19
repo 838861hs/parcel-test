@@ -76,3 +76,19 @@
 .toggle-switch-checkbox:checked + .toggle-switch-label .toggle-switch-switch {
   right: 4px; /* 右端に移動するときの位置を調整 */
 }
+
+
+/* custom-datepicker.css */
+.react-datepicker__header {
+  display: flex;
+  flex-direction: column;
+}
+
+.react-datepicker__current-month {
+  order: 2;
+}
+
+.react-datepicker__year-dropdown-container--select,
+.react-datepicker__month-dropdown-container--select {
+  order: 1;
+}
